@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   api_express:
-    image: api_express:1.0.0
+    image: api_express:1.0.1
     build:
       context: .
     ports:
