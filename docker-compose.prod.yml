@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  api_express:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.express.rule=Host(`express.fgarioli.com.br`)"
+      - "traefik.http.routers.express.tls=true"
+      - "traefik.http.routers.express.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.express.entrypoints=websecure"
+      - "traefik.http.services.express.loadbalancer.server.port=8080"
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true
