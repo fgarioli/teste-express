@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/abacaxi", (req, res) => {
-  res.send("Jacitec com Docker");
+  res.send("Jacitec com Docker teste");
 });
 
 app.listen(PORT, HOST, () => {
