@@ -6,3 +6,5 @@ services:
     container_name: api_express
     ports:
       - 8080:8080
+    volumes:
+      - .:/usr/src/app
